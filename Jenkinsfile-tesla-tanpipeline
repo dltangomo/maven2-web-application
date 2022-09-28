@@ -24,6 +24,7 @@ node {
     input message: 'Application ready for deployment, Please review and approve'
     }
     stage ('7deploytoProd'){
+    "sleep 50"
 deploy adapters: [tomcat9(credentialsId: 'tomcatcredentials', path: '', url: 'http://54.174.253.231:8080/')], contextPath: null, war: 'target/*war'
     }
     }
